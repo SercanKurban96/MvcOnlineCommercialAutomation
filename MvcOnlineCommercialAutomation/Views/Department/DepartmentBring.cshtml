@@ -1,0 +1,21 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Department
+@{
+    ViewBag.Title = "DepartmentBring";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Departman Güncelleme</h2>
+<br />
+@using (Html.BeginForm("DepartmentEdit", "Department", FormMethod.Post))
+{
+    <div class="form-group">
+        @*@Html.LabelFor(x => x.DepartmentName)*@
+        @Html.Label("Departman Adı")
+        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @style = "color-red" })
+        @Html.HiddenFor(x => x.DepartmentID)
+    </div>
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+}
+

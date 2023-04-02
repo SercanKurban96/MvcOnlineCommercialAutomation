@@ -1,0 +1,24 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "MyOrders";
+    Layout = "~/Views/Shared/CurrentLayout.cshtml";
+}
+<br />
+<h2>Sipariş Geçmişim</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Price</td>
+            <td>@Convert.ToDateTime(item.SalesDate).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>

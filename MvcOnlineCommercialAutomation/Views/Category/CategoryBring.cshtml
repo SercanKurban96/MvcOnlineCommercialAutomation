@@ -1,0 +1,19 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Category
+@{
+    ViewBag.Title = "CategoryBring";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Kategori Güncelleme</h2>
+<br />
+@using (Html.BeginForm("CategoryEdit", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @*@Html.LabelFor(x=>x.CategoryName)*@
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color-red" })
+        @Html.HiddenFor(x => x.CategoryID)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}

@@ -1,0 +1,47 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        Ürün Adı: @Html.TextBox("p")
+        <input type="submit" value="Ara"/>
+    </p>
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        @*<th>ID</th>*@
+        <th>ÜRÜN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+        @*<th>GÖRSEL</th>*@
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>SATIŞ YAP</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>@item.ProductID</td>*@
+            <td>@item.ProductName</td>
+            <td>@item.Brand</td>
+            <td>@item.Stock</td>
+            <td>@item.PurchasePrice ₺</td>
+            <td>@item.SalePrice ₺</td>
+            <td>@item.Category.CategoryName</td>
+            @*<td>@item.ProductImage</td>*@
+            <td><a href="/Product/ProductDelete/@item.ProductID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Product/ProductBring/@item.ProductID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Product/MakeSale/@item.ProductID" class="btn btn-default" style="background-color: #0094ff">Satış Yap</a></td>
+        </tr>
+    }
+</table>
+<a href="/Product/ProductAdd/" class="btn btn-info">Ürün Ekle</a>

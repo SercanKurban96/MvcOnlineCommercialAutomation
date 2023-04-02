@@ -1,0 +1,33 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Current
+@{
+    ViewBag.Title = "CurrentAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Cari Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @*@Html.LabelFor(x => x.CurrentName)*@
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color-red" })
+    <br />
+    @*@Html.LabelFor(x => x.CurrentSurname)*@
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentSurname, "", new { @style = "color-red" })
+    <br />
+    @*@Html.LabelFor(x => x.CurrentCity)*@
+    @Html.Label("Şehir")
+    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentCity, "", new { @style = "color-red" })
+    <br />
+    @*@Html.LabelFor(x => x.CurrentMail)*@
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentMail, "", new { @style = "color-red" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

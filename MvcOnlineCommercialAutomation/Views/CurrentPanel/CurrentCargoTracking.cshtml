@@ -1,0 +1,25 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<CargoTracking>
+
+@{
+    ViewBag.Title = "CurrentCargoTracking";
+    Layout = "~/Views/Shared/CurrentLayout.cshtml";
+}
+@{ 
+    int i = 1;
+}
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@i - @item.Description</td>
+            <td>@item.CargoTrackingDateTime</td>
+        </tr>
+        i++;
+    }
+</table>

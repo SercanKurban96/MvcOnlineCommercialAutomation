@@ -1,0 +1,33 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Employee
+@{
+    ViewBag.Title = "EmployeeBring";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("EmployeeEdit", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.EmployeeID)
+        @Html.LabelFor(x => x.EmployeeName)
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.EmployeeName, "", new { @style = "color-red" })*@
+        <br />
+        @Html.LabelFor(x => x.EmployeeSurname)
+        @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.EmployeeSurname, "", new { @style = "color-red" })*@
+        <br />
+        @Html.LabelFor(x => x.EmployeeImage)
+        @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+        <input type="file" name="EmployeeImage" />
+        <br />
+        @*@Html.LabelFor(x => x.CurrentMail)*@
+        @Html.Label("Departman")
+        @Html.DropDownListFor(x => x.Departmentid, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+    </div>
+}
+
