@@ -28,8 +28,7 @@
             <td>@item.Price</td>
             <td>@item.Piece</td>
             <td>@item.TotalAmount</td>
-            <td>@item.SalesDate</td>
+            <td>@Convert.ToDateTime(@item.SalesDate).ToShortDateString()</td>
         </tr>
     }
 </table>
-<button class="btn btn-default" style="background-color:dodgerblue">Yazdır</button>

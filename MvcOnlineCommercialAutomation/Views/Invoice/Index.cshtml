@@ -25,7 +25,7 @@
             @*<td>@item.InvoiceID</td>*@
             <td>@item.InvoiceSerialNumber @item.InvoiceItemNumber</td>
             @*<td>@item.TaxDepartment</td>*@
-            <td>@item.InvoiceDate</td>
+            <td>@Convert.ToDateTime(@item.InvoiceDate).ToShortDateString()</td>
             <td>@item.InvoiceTime</td>
             @*<td>@item.Deliverer</td>*@
             @*<td>@item.Receiver</td>*@

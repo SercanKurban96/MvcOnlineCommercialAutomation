@@ -17,7 +17,6 @@
         <th>Adet</th>
         <th>Toplam</th>
         <th>Tarih</th>
-        <th>Yazdır</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -28,8 +27,7 @@
             <td>@item.Price</td>
             <td>@item.Piece</td>
             <td>@item.TotalAmount</td>
-            <td>@item.SalesDate</td>
-            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a></td>
+            <td>@Convert.ToDateTime(@item.SalesDate).ToShortDateString()</td>
         </tr>
     }
 </table>

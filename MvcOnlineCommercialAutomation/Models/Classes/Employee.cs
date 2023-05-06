@@ -26,6 +26,21 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         [StringLength(250)]
         public string EmployeeImage { get; set; }
 
+        [Display(Name = "Personel Hakkında")]
+        [Column(TypeName = "Varchar")]
+        [StringLength(500)]
+        public string EmployeeDetail { get; set; }
+
+        [Display(Name = "Personel Adres")]
+        [Column(TypeName = "Varchar")]
+        [StringLength(200)]
+        public string EmployeeAddress { get; set; }
+
+        [Display(Name = "Personel Telefon")]
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string EmployeePhone { get; set; }
+
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
         public int Departmentid { get; set; }
         public virtual Department Department { get; set; }

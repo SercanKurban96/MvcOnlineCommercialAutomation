@@ -71,6 +71,9 @@ namespace MvcOnlineCommercialAutomation.Controllers
             emp.EmployeeName = employee.EmployeeName;
             emp.EmployeeSurname = employee.EmployeeSurname;
             emp.EmployeeImage = employee.EmployeeImage;
+            emp.EmployeeDetail = employee.EmployeeDetail;
+            emp.EmployeeAddress = employee.EmployeeAddress;
+            emp.EmployeePhone = employee.EmployeePhone;
             emp.Departmentid = employee.Departmentid;
             c.SaveChanges();
             return RedirectToAction("Index");

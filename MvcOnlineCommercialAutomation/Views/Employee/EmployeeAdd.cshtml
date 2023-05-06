@@ -20,6 +20,15 @@
         @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
         <input type="file" name="EmployeeImage" />
         <br />
+        @Html.LabelFor(x => x.EmployeeDetail)
+        @Html.TextBoxFor(x => x.EmployeeDetail, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeAddress)
+        @Html.TextBoxFor(x => x.EmployeeAddress, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EmployeePhone)
+        @Html.TextBoxFor(x => x.EmployeePhone, new { @class = "form-control" })
+        <br />
         @Html.Label("Departman")
         @Html.DropDownListFor(x => x.Departmentid, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
         <br />

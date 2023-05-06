@@ -69,5 +69,10 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index","Login");
+        }
     }
 }
